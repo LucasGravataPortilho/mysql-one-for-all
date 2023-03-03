@@ -29,7 +29,7 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 CREATE TABLE SpotifyClone.plano (
 	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     tipo_plano VARCHAR(45) NOT NULL,
-    valor DOUBLE NOT NULL
+    valor DECIMAL(4,2) NOT NULL
 );
 
 CREATE TABLE SpotifyClone.artista (
@@ -83,7 +83,7 @@ CREATE TABLE SpotifyClone.seguidores (
 
 INSERT INTO SpotifyClone.plano (tipo_plano, valor)
 VALUES
-	('gratuito', 0),
+	('gratuito', 0.00),
     ('familiar', 7.99),
     ('universitário', 5.99),
     ('pessoal', 6.99);
