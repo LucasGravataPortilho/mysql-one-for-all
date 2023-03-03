@@ -59,7 +59,9 @@ CREATE TABLE SpotifyClone.cancao (
     nome_cancao VARCHAR(45) NOT NULL,
     duracao_segundos INT NOT NULL,
     album_id INT,
-    FOREIGN KEY (album_id) REFERENCES album(id)
+    artista_id INT,
+    FOREIGN KEY (album_id) REFERENCES album(id),
+    FOREIGN KEY (artista_id) REFERENCES artista(id)
 );
 
 CREATE TABLE SpotifyClone.historico (
@@ -119,18 +121,18 @@ VALUES
 	('Somewhere Far Beyond', 5, 2007),
 	('I Put A Spell On You', 6, 2012);
     
-INSERT INTO SpotifyClone.cancao (nome_cancao, duracao_segundos, album_id)
+INSERT INTO SpotifyClone.cancao (nome_cancao, duracao_segundos, album_id, artista_id)
 VALUES
-   ('BREAK MY SOUL', 279, 1),
-   ('VIRGO''S GROOVE', 369, 1),
-   ('ALIEN SUPERSTAR', 116, 1),
-   ('Don''t Stop Me Now', 203, 2),
-   ('Under Pressure', 152, 3),
-   ('Como Nossos Pais', 105, 4),
-   ('O Medo de Amar é o Medo de Ser Livre', 207, 5),
-   ('Samba em Paris', 267, 6),
-   ('The Bard''s Song', 244, 7),
-   ('Feeling Good', 100, 8);
+   ('BREAK MY SOUL', 279, 1, 1),
+   ('VIRGO''S GROOVE', 369, 1, 1),
+   ('ALIEN SUPERSTAR', 116, 1, 1),
+   ('Don''t Stop Me Now', 203, 2, 2),
+   ('Under Pressure', 152, 3, 2),
+   ('Como Nossos Pais', 105, 4, 3),
+   ('O Medo de Amar é o Medo de Ser Livre', 207, 5, 3),
+   ('Samba em Paris', 267, 6, 4),
+   ('The Bard''s Song', 244, 7, 5),
+   ('Feeling Good', 100, 8, 6);
    
 INSERT INTO SpotifyClone.historico (usuario_id, cancao_id, data_reproducao)
 VALUES
