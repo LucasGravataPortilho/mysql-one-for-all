@@ -11,7 +11,7 @@
 --   ('exemplo de dados 1', 'exemplo de dados A'),
 --   ('exemplo de dados 2', 'exemplo de dados B'),
 --   ('exemplo de dados 3', 'exemplo de dados C');
-CREATE TABLE SpotifyClone.favoritas (
+CREATE TABLE IF NOT EXISTS SpotifyClone.favoritas (
 	usuario_id INT NOT NULL,
 	cancao_id INT NOT NULL,
 	CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
